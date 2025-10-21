@@ -1,28 +1,23 @@
-import { useState } from 'react'
+import React from 'react';
+import Header from './components/Header';
+import HeroCover from './components/HeroCover';
+import Deliverables from './components/Deliverables';
+import GlassSummary from './components/GlassSummary';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-neutral-50 text-neutral-900">
+      <Header />
+      <main>
+        <HeroCover />
+        <div className="mx-auto max-w-6xl px-6 md:px-8">
+          <Deliverables />
+          <GlassSummary />
         </div>
-      </div>
+      </main>
+      <footer className="mt-16 border-t border-neutral-200/60 bg-white/70 backdrop-blur-sm">
+        <div className="mx-auto max-w-6xl px-6 py-6 text-sm text-neutral-500">© {new Date().getFullYear()} Webards — Portail Client</div>
+      </footer>
     </div>
-  )
+  );
 }
-
-export default App
